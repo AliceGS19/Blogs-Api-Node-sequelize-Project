@@ -1,12 +1,25 @@
 const express = require('express');
+
+const list = require('./list');
 const create = require('./create');
-const { user: { authMail, authPassword, authDisplayName } } = require('../../middlewares');
+const getUser = require('./getUser');
+
+const { user: 
+    { 
+        authMail,
+        authPassword,
+        authDisplayName,
+    }, 
+    authToken } = require('../../middlewares');
 
 const router = express.Router({ mergeParams: true });
 
-router.use(authDisplayName);
-router.use(authMail);
-router.use(authPassword);
-router.post('/', create);
+router.post('/', authDisplayName, authMail, authPassword, create);
+
+router.use(authToken);
+
+router.get('/', list);
+
+router.get('/:id', getUser);
 
 module.exports = router;

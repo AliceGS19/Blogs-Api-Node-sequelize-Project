@@ -1,8 +1,8 @@
 const { Users } = require('../../models');
 
-module.exports = async (userEmail) => {
+module.exports = async (id) => {
     try {
-        const user = Users.findOne({ where: { email: userEmail } });
+        const user = Users.findByPk(id);
         return user;
     } catch (err) {
         return err;

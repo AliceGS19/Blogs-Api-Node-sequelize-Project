@@ -1,7 +1,12 @@
+const error = require('./error');
+const authToken = require('./authToken');
+
 const authMail = require('./user/authMail');
 const authPassword = require('./user/authPassword');
 const authDisplayName = require('./user/authDisplayName');
-const error = require('./error');
+
+const authLoginEmail = require('./login/authLoginEmail');
+const authLoginPassword = require('./login/authLoginPassword');
 
 module.exports = {
     user: {
@@ -9,5 +14,10 @@ module.exports = {
         authPassword,
         authDisplayName,
     },
+    login: {
+        authLoginEmail,
+        authLoginPassword,
+    },
     error,
+    authToken,
 };
