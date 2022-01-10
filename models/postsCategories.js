@@ -1,6 +1,6 @@
 const PostsCategories = (sequelize) => {
   const postsCategories = sequelize.define('PostsCategories', { }, { timestamps: false });
-  PostsCategories.associate = (models) => {
+  postsCategories.associate = (models) => {
     models.BlogPosts.belongsToMany(
       models.Categories,
       { as: 'categories', through: PostsCategories, foreignKey: 'postId', otherKey: 'categoryId' },
