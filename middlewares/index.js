@@ -8,6 +8,8 @@ const authDisplayName = require('./user/authDisplayName');
 const authLoginEmail = require('./login/authLoginEmail');
 const authLoginPassword = require('./login/authLoginPassword');
 
+const authCategory = require('./categories/authCategory');
+
 module.exports = {
     user: {
         authMail,
@@ -17,6 +19,9 @@ module.exports = {
     login: {
         authLoginEmail,
         authLoginPassword,
+    },
+    categories: {
+        authCategory,
     },
     error,
     authToken,

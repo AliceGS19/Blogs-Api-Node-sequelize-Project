@@ -3,8 +3,7 @@ const { generateToken } = require('../../helpers');
 
 module.exports = async (req, res, next) => {
     try {
-        const newUser = req.body;
-        await create(newUser);
+        const newUser = (await create(req.body)).dataValues;
         delete newUser.password;
         delete newUser.email;
         const token = generateToken(newUser);
