@@ -1,9 +1,9 @@
-const { getOne } = require('../../services/user');
+const { getById } = require('../../services/user');
 
 module.exports = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const user = await getOne(id);
+        const user = await getById(id);
         if (!user) {
             return res.status(404).send({ message: 'User does not exist' });
         }

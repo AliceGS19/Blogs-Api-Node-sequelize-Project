@@ -1,11 +1,11 @@
 const create = require('./create');
 const getAll = require('./getAll');
-const getOne = require('./getOne');
+const getById = require('./getById');
 const getByMail = require('./getByMail');
 
 module.exports = {
     create,
     getAll,
-    getOne,
+    getById,
     getByMail,
 };
