@@ -26,8 +26,8 @@ router.use(authPost);
 
 router.put('/:id', notHaveCategories, update);
 
-router.use(authCategories);
+router.use(haveCategories, authCategories);
 
-router.post('/', haveCategories, create);
+router.post('/', create);
 
 module.exports = router;

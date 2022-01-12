@@ -15,7 +15,6 @@ module.exports = async (req, res, next) => {
         delete post.dataValues.updated;
         post.dataValues.title = title;
         post.dataValues.content = content;
-        console.log(post.dataValues);
         return res.status(200).send(post);
     } catch (err) {
         next(err);
